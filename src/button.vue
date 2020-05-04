@@ -1,9 +1,25 @@
 <template>
-  <button class="g-button">你好</button>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <g-icon :name="icon" v-if="icon" class="icon"></g-icon>
+    <div class="content">
+      <slot/>
+    </div>
+  </button>
 </template>
 
-<script lang="ts">
-export default {}
+<script lang="js">
+  export default {
+    props: {
+      icon: {},
+      iconPosition: {
+        type: String,
+        default: 'left',
+        validator(value) {
+          return value === 'left' || value === 'right';
+        }
+      }
+    }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -14,17 +30,44 @@ export default {}
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     background: var(--button-bg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    &:hover {
+      border-color: var(--border-color-hover);
+    }
+
+    &:active {
+      background-color: var(--button-active-bg);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    > .icon {
+      order: 1;
+      margin-right: .2em;
+    }
+
+    > .content {
+      order: 2;
+    }
+
+    &.icon-right {
+
+      > .icon {
+        order: 2;
+        margin-left: .2em;
+        margin-right: 0;
+      }
+
+      > .content {
+        order: 1;
+      }
+    }
   }
 
-  .g-button:hover {
-    border-color: var(--border-color-hover);
-  }
 
-  .g-button:active {
-    background-color: var(--button-active-bg);
-  }
-
-  .g-button:focus {
-    outline: none;
-  }
 </style>

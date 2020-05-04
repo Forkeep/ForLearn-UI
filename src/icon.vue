@@ -4,7 +4,7 @@
   </svg>
 </template>
 
-<script lang="ts">
+<script>
   export default {
     props: ['name']
   };
@@ -14,6 +14,5 @@
 .g-icon{
   width: 1em;
   height: 1em;
-
 }
 </style>
