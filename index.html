@@ -31,19 +31,34 @@
     body {
       font-size: var(--font-size);
     }
+    .box{
+      margin: 10px 0;
+    }
   </style>
 </head>
 <body>
 <div id="app">
-  <g-button icon="settings" icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-  <g-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-  <g-button icon="settings" icon-position="left" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
-  <g-button-group>
-    <g-button icon="left" icon-position="left">上一页</g-button>
-    <g-button>更多</g-button>
-    <g-button>更多</g-button>
-    <g-button icon="right" icon-position="right">下一页</g-button>
-  </g-button-group>
+  <div class="box">
+    <g-input></g-input>
+    <g-input disabled value="lizhe"></g-input>
+
+    <g-input readonly value="李哲"></g-input>
+    <g-input readonly value="李哲" error="姓名输入错误"></g-input>
+
+
+  </div>
+  <div class="box">
+    <g-button icon="settings" icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+    <g-button icon="settings" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+    <g-button icon="settings" icon-position="left" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
+    <g-button-group>
+      <g-button icon="left" icon-position="left">上一页</g-button>
+      <g-button>更多</g-button>
+      <g-button>更多</g-button>
+      <g-button icon="right" icon-position="right">下一页</g-button>
+    </g-button-group>
+  </div>
+
 </div>
 <script src="./src/index.js"></script>
 
