@@ -1,8 +1,6 @@
 <template>
-  <div class="col" :class="[colSpan,colOffset]">
-    <div style="border: 1px solid green; height: 100px;">
-      <slot/>
-    </div>
+  <div class="col" :class="[colSpan,colOffset]" :style="colGutter">
+    <slot/>
   </div>
 </template>
 
@@ -34,12 +32,10 @@
         }
       },
       colGutter() {
-        if (this.gutter.value > 0) {
           return {
             paddingLeft: this.gutter / 2 + 'px',
             paddingRight: this.gutter / 2 + 'px'
           }
-        }
       }
     }
   }
