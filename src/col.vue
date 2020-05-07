@@ -15,7 +15,7 @@
         type: [Number, String]
       }
     },
-    date() {
+    data() {
       return {
         gutter: 0
       }
