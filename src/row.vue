@@ -21,8 +21,8 @@ export default {
   computed: {
     rowStyle() {
       return {
-        marginLeft: -this.gutter / 2 + 'px',
-        marginRight: -this.gutter / 2 + 'px',
+        marginLeft: (-this.gutter / 2) + 'px',
+        marginRight: (-this.gutter / 2) + 'px',
       }
     },
     rowClass() {
@@ -41,19 +41,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row {
-  display: flex;
+  .row {
+    display: flex;
+    &.align-left {
+      justify-content: flex-start;
+    }
 
-  &.align-left {
-    justify-content: flex-start;
-  }
+    &.align-right {
+      justify-content: flex-end;
+    }
 
-  &.align-right {
-    justify-content: flex-end;
-  }
+    &.align-center {
+      justify-content: center;
+    }
 
-  &.align-center {
-    justify-content: center;
+
   }
-}
 </style>
