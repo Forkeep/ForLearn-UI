@@ -1,6 +1,8 @@
 <template>
-  <div class="col" :class="[`col-${span}`]">
-    <slot/>
+  <div class="col" :class="[colSpan,colOffset]">
+    <div style="border: 1px solid green; height: 100px;">
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,34 @@
     props: {
       span: {
         type: [Number, String]
+      },
+      offset: {
+        type: [Number, String]
+      }
+    },
+    date() {
+      return {
+        gutter: 0
+      }
+    },
+    computed: {
+      colSpan() {
+        if (this.span) {
+          return `col-${this.span}`
+        }
+      },
+      colOffset() {
+        if (this.offset) {
+          return `offset-${this.offset}`
+        }
+      },
+      colGutter() {
+        if (this.gutter.value > 0) {
+          return {
+            paddingLeft: this.gutter / 2 + 'px',
+            paddingRight: this.gutter / 2 + 'px'
+          }
+        }
       }
     }
   }
@@ -17,14 +47,17 @@
 
 <style lang="scss" scoped>
   .col {
-    height: 100px;
-    background-color: gray;
     width: 50%;
-    border: 1px solid red;
     $class-prefix: col-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n/24)*100%;
+      }
+    }
+    $class-prefix: offset-;
+    @for $n from 1 through 24 {
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n/24)*100%;
       }
     }
   }
