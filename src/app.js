@@ -33,11 +33,24 @@ new Vue({
       value1: '0'
     },
     created() {
-      // this.$toast()
+      this.$toast('我是toast', {
+        closeButton: {
+          text: '我知道了',
+          callBack: () => {console.log('用户说他知道了')}
+        }
+      })
     },
     methods: {
       showToast(){
-        this.$toast('我是toast')
+        this.$toast('<p><a href="http://qq.com">111111111</a></p>',{
+          closeButton: {
+            text: '关闭',
+            callBack(){
+              console.log('aaaaaaaok')
+            }
+          },
+          enableHTML :false
+        })
       }
     }
 
