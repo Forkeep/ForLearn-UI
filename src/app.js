@@ -76,7 +76,7 @@ new Vue({
             }
           },
           enableHTML :true,
-          autoClose:false,
+          autoClose:2,
           position: 'top'
         })
       },
