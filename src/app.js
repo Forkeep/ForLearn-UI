@@ -33,7 +33,7 @@ new Vue({
       value1: '0'
     },
     created() {
-      this.$toast('我是toast', {
+      this.$toast('很多文字很多文', {
         closeButton: {
           text: '我知道了',
           callBack: () => {console.log('用户说他知道了')}
