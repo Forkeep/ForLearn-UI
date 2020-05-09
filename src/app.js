@@ -49,7 +49,22 @@ new Vue({
               console.log('aaaaaaaok')
             }
           },
-          enableHTML :true
+          enableHTML :true,
+          autoClose:false,
+          position: 'middle'
+        })
+      },
+      showToast2(){
+        this.$toast('<p><a href="http://qq.com">111111111</a></p>',{
+          closeButton: {
+            text: '关闭',
+            callBack(){
+              console.log('aaaaaaaok')
+            }
+          },
+          enableHTML :true,
+          autoClose:false,
+          position: 'bottom'
         })
       }
     }
