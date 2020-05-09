@@ -49,7 +49,7 @@ new Vue({
               console.log('aaaaaaaok')
             }
           },
-          enableHTML :false
+          enableHTML :true
         })
       }
     }
