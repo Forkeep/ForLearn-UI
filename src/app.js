@@ -33,16 +33,16 @@ new Vue({
       value1: '0'
     },
     created() {
-      this.$toast('很多文字很多文', {
-        closeButton: {
-          text: '我知道了',
-          callBack: () => {console.log('用户说他知道了')}
-        }
-      })
+      // this.$toast('很多文字很多文', {
+      //   closeButton: {
+      //     text: '我知道了',
+      //     callBack: () => {console.log('用户说他知道了')}
+      //   }
+      // })
     },
     methods: {
       showToast(){
-        this.$toast('<p><a href="http://qq.com">111111111</a></p>',{
+        this.$toast('测试代码css三个位置的动画',{
           closeButton: {
             text: '关闭',
             callBack(){
@@ -55,7 +55,7 @@ new Vue({
         })
       },
       showToast2(){
-        this.$toast('<p><a href="http://qq.com">111111111</a></p>',{
+        this.$toast('测试代码css三个位置的动画',{
           closeButton: {
             text: '关闭',
             callBack(){
@@ -66,7 +66,20 @@ new Vue({
           autoClose:false,
           position: 'bottom'
         })
-      }
+      },
+      showToast3(){
+        this.$toast('<p><a href="http://qq.com">111111111</a></p>',{
+          closeButton: {
+            text: '关闭',
+            callBack(){
+              console.log('aaaaaaaok')
+            }
+          },
+          enableHTML :true,
+          autoClose:false,
+          position: 'top'
+        })
+      },
     }
 
   }
