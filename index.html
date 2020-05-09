@@ -26,7 +26,7 @@
 
     #app {
       /*margin: 20px;*/
-      border: 1px solid green;
+      /*border: 1px solid green;*/
     }
 
     body {
@@ -44,15 +44,7 @@
 </head>
 <body>
 <div id="app">
-<g-layout style="height: 100vh">
-  <g-sider style="width: 200px">sider</g-sider>
-  <g-layout>
-    <g-header class="demo">header</g-header>
-    <g-content class="demo">content</g-content>
-    <g-footer class="demo">footer</g-footer>
-
-  </g-layout>
-</g-layout>
+<g-button @click="showToast">按钮</g-button>
 
 </div>
 <script src="src/app.js"></script>
