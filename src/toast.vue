@@ -95,8 +95,8 @@
     100% {opacity: 1;transform: translateY(0%);}
   }
   @keyframes fade-in {
-    0% {transform: scale(0.5) }
-    100% {transform: scale(1);}
+    0% {opacity: 0;}
+    100% {opacity: 100%;}
   }
   .wrapper {
     position: fixed;
