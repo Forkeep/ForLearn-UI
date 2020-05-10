@@ -32,7 +32,9 @@
       }
     },
     created() {
-      // this.$emit('update:selected','XXX')
+      this.eventBus.$on('update:selected', (name) => {
+        console.log(`tabs:${name}`)
+      })
     },
     mounted() {
       this.eventBus.$emit('update:selected',this.selected)

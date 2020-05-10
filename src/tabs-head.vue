@@ -12,7 +12,9 @@
     name: 'FLTabsHead',
     inject: ['eventBus'],
     created() {
-      this.$emit('update:selected', 'tabs-head数据')
+      this.eventBus.$on('update:selected', (name) => {
+        console.log(`tabs-head:${name}`)
+      })
     },
   }
 </script>

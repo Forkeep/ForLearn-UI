@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" @click="XXX" :class="tabItemClasses">
+  <div class="tabs-item" @click="selectItem" :class="tabItemClasses">
     <slot></slot>
   </div>
 </template>
@@ -24,15 +24,19 @@
       }
     },
     computed:{
-      tabItemClasses(){}
+      tabItemClasses() {
+        return {
+          active: this.active
+        }
+      }
     },
     created() {
-      this.eventBus.$on('update:selected',(value)=>{
-        console.log(value)
+      this.eventBus.$on('update:selected', (name) => {
+        this.active = name === this.name;
       })
     },
     methods:{
-      XXX(){
+      selectItem(){
         this.eventBus.$emit('update:selected',this.name)
       }
     }
@@ -43,5 +47,9 @@
 <style lang="scss" scoped>
 .tabs-item{
   padding: 0 1.5em;
+  cursor: pointer;
+  &.active{
+    background: red;
+  }
 }
 </style>

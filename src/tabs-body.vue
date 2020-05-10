@@ -10,7 +10,7 @@
     inject:['eventBus'],
     created() {
       this.eventBus.$on('update:selected',(value)=>{
-        console.log(value)
+        console.log(`tabs-body:${value}`)
       })
     }
   }
