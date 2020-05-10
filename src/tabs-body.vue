@@ -5,6 +5,15 @@
 </template>
 
 <script lang="js">
+  export default {
+    name:'FLTabsBody',
+    inject:['eventBus'],
+    created() {
+      this.eventBus.$on('update:selected',(value)=>{
+        console.log(value)
+      })
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

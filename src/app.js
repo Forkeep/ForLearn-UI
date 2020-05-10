@@ -42,7 +42,8 @@ new Vue({
       loading1: false,
       loading2: false,
       loading3: false,
-      value1: '0'
+      value1: '0',
+      selectedTab: 'sports',
     },
     created() {
       // this.$toast('很多文字很多文', {
