@@ -26,7 +26,8 @@
     computed:{
       tabItemClasses() {
         return {
-          active: this.active
+          active: this.active,
+          disabled: this.disabled
         }
       }
     },
@@ -37,6 +38,7 @@
     },
     methods:{
       selectItem(){
+        if (this.disabled){return}
         this.eventBus.$emit('update:selected',this.name,this)
       }
     }
@@ -45,17 +47,24 @@
 </script>
 
 <style lang="scss" scoped>
-  $blue: blue;
-.tabs-item{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 1.5em;
-  cursor: pointer;
-  &.active{
-    color: $blue;
-    font-weight: 700;
+  $tabItemColor: green;
+  .tabs-item {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5em;
+    cursor: pointer;
+
+    &.active {
+      color: $tabItemColor;
+      font-weight: 700;
+    }
+
+    &.disabled {
+      color: #666;
+      cursor: not-allowed;
+
+    }
   }
-}
 </style>

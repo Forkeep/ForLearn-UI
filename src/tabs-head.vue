@@ -30,17 +30,21 @@
     align-items: center;
     height: $height;
     position: relative;
+    border-bottom:1px solid #ddd;
 
     > .line {
       position: absolute;
       bottom: 0;
       left: 0;
-      border-bottom: 1px solid blue;
+      border-bottom: 2px solid green;
       transition: all 350ms;
     }
 
     > .action-wrapper {
       margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>
