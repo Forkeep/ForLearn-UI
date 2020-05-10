@@ -9,8 +9,7 @@
     name:'FLTabsBody',
     inject:['eventBus'],
     created() {
-      this.eventBus.$on('update:selected',(value)=>{
-        console.log(`tabs-body:${value}`)
+      this.eventBus.$on('update:selected',(value,vm)=>{
       })
     }
   }

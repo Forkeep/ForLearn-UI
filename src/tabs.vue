@@ -33,11 +33,18 @@
     },
     created() {
       this.eventBus.$on('update:selected', (name) => {
-        console.log(`tabs:${name}`)
       })
     },
     mounted() {
-      this.eventBus.$emit('update:selected',this.selected)
+      this.$children.forEach((vm) => {
+        if (vm.$options.name === 'FLTabsHead') {
+          vm.$children.forEach((childrenVm) => {
+            if (childrenVm.name === this.selected) {
+              this.eventBus.$emit('update:selected', this.selected, childrenVm)
+            }
+          })
+        }
+      });
     }
   }
 </script>
